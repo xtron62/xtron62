@@ -351,9 +351,6 @@ def justify_format(root, element_id, new_text, length=0):
 
 
 def find_and_replace(root, element_id, new_text):
-    """
-    Finds the element in the SVG file and replaces its text with a new value
-    """
     for element in root.iter():
         if element.get("id") == element_id:
             element.text = str(new_text)
