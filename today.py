@@ -354,10 +354,10 @@ def find_and_replace(root, element_id, new_text):
     """
     Finds the element in the SVG file and replaces its text with a new value
     """
-    element = root.find(f".//*[@id='{element_id}']")
-    if element is not None:
-        element.text = new_text
-
+    for element in root.iter():
+        if element.get("id") == element_id:
+            element.text = str(new_text)
+            return
 def commit_counter(comment_size):
     """
     Counts up my total commits, using the cache file created by cache_builder.
