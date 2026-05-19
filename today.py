@@ -356,8 +356,10 @@ def find_and_replace(root, element_id, new_text):
     """
     element = root.find(f".//*[@id='{element_id}']")
     if element is not None:
+        print(f"FOUND: {element_id}")
         element.text = new_text
-
+    else:
+        print(f"NOT FOUND: {element_id}")
 
 def commit_counter(comment_size):
     """
