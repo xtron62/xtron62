@@ -355,7 +355,6 @@ def find_and_replace(root, element_id, new_text):
     for element in root.iter():
         if element.get("id") == element_id:
             element.text = str(new_text)
-            return
 def commit_counter(comment_size):
     """
     Counts up my total commits, using the cache file created by cache_builder.
