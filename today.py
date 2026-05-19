@@ -358,6 +358,7 @@ def find_and_replace(root, element_id, new_text):
     
     if element:
         print(f"FOUND: {element_id}")
+        element[0].clear()
         element[0].text = str(new_text)
     else:
         print(f"NOT FOUND: {element_id}")
